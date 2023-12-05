@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:to_do_app/home/presenter/widgets/box_widget.dart';
+import 'package:to_do_app/tasks/presenter/create_task/create_task_view.dart';
 import 'package:to_do_app/widgets/app_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -75,7 +76,13 @@ class _HomeViewState extends State<HomeView> {
                     return Colors.transparent;
                   },
                 )),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const CreateTaskView()),
+                  );
+                },
                 child: Text('Completed',
                     style: GoogleFonts.poppins(
                       color: Colors.black,
